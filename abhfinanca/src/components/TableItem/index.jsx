@@ -3,6 +3,14 @@ import { formatDate } from '../../helpers/helders'
 import { categories } from '../../data/categories'
 
 export const TableItem = ({ item }) => {
+
+    const palavraMaiuscula = (str) => {
+         if (typeof str !== 'string' || str.length === 0) {
+            return str;
+         }
+        return str.charAt(0).toUpperCase() + str.slice(1)
+    }
+
     return (
         <C.TableLine>
             <C.TableColumn>{formatDate(item.date)}</C.TableColumn>
@@ -11,10 +19,10 @@ export const TableItem = ({ item }) => {
                     {categories[item.category].title}
                 </C.Category>
             </C.TableColumn>
-            <C.TableColumn>{item.title}</C.TableColumn>
+            <C.TableColumn>{palavraMaiuscula(item.title)}</C.TableColumn>
             <C.TableColumn>
                 <C.Value color={categories[item.category].expense}>
-                    R$ {item.value}
+                    R$ {item.value.toFixed(2)}
                 </C.Value>
             </C.TableColumn>
         </C.TableLine>

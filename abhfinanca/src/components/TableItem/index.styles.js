@@ -18,5 +18,5 @@ export const Category = styled.div`
 export const Value = styled.div`
     color: ${props => props.color || '#000'};
     font-weight: bold;
-    text-align: right;
+    text-align: left;
 `

@@ -53,8 +53,9 @@ const App = () => {
       <C.Body>
         <InfoArea currentMonth={currentMonth} onMonthChange={handleMonthChange} income={income} expense={expense}/>
         <InputArea onAdd={handleAddItem} />
-        <TableArea list={filteredList}/>
         <AreaIA item={filteredList} />
+        <TableArea list={filteredList}/>
+        
       </C.Body>
     </C.Container>
   )
