@@ -4,7 +4,7 @@ export const ResumeItem = ({ title, value, color }) => {
     return (
         <C.Container>
             <C.Title>{title}</C.Title>
-            <C.Value color={color}>R${value}</C.Value>
+            <C.Value color={color}>R${value.toFixed(2)}</C.Value>
         </C.Container>
     )
 }
