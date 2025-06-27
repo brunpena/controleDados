@@ -6,6 +6,7 @@ import { getCurrentMonth, filterListByMonth } from './helpers/helders.js'
 import { TableArea } from './components/TableArea/index.jsx'
 import { InfoArea } from './components/InfoArea/index.jsx'
 import { InputArea } from './components/InputArea/index.jsx'
+import { AreaIA } from './components/AreaIA/index.jsx'
 
 const App = () => {
   const [list, setList] = useState(itens)
@@ -53,6 +54,7 @@ const App = () => {
         <InfoArea currentMonth={currentMonth} onMonthChange={handleMonthChange} income={income} expense={expense}/>
         <InputArea onAdd={handleAddItem} />
         <TableArea list={filteredList}/>
+        <AreaIA item={filteredList} />
       </C.Body>
     </C.Container>
   )
