@@ -1,7 +1,7 @@
 import { categories } from '../../data/categories'
 import * as C from './index.styles'
 import { useState } from 'react'
-import { newDateAdjusted } from '../../helders/helders'
+import { newDateAdjusted } from '../../helpers/helders'
 
 export const InputArea = ({ onAdd }) => {
 

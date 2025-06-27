@@ -1,5 +1,5 @@
 import * as C from './index.styles'
-import { formatDate } from '../../helders/helders'
+import { formatDate } from '../../helpers/helders'
 import { categories } from '../../data/categories'
 
 export const TableItem = ({ item }) => {

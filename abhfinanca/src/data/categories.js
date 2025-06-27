@@ -34,5 +34,11 @@ export const categories = {
         color: '#34D399',
         icon: 'attach_money',
         expense: 'green'
+    },
+    other: {
+        title: 'Outros',
+        color: '#A78BFA',
+        icon: 'more_horiz',
+        expense: 'red'
     }
 }
