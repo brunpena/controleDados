@@ -23,6 +23,13 @@ export const ModalHeader = styled.div`
   margin-bottom: 10px;
   font-weight: bold;
   font-size: 18px;
+  & button {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    left: 0;
+  }
 `;
 
 export const ModalBody = styled.div`

@@ -61,9 +61,9 @@ const App = () => {
   }
 
   const handleSaveEdit = (editedItem) => {
-    const newList = list.map(item => {
+    const newList = list.map(item => 
       item.id === editedItem.id ? editedItem : item
-    })
+    )
     setList(newList)
     saveData(newList)
     setIsEditModalOpen(false)
@@ -80,12 +80,7 @@ const App = () => {
         <AreaIA item={filteredList} />
         <TableArea list={filteredList} onDelete={handleDeleteItem} onEdit={handleEditClick}/>
         {isEditModalOpen && 
-          <EditModal 
-            item={editingItem} 
-            onSave={handleSaveEdit} 
-            onClose={() => setIsEditModalOpen(false)} 
-          />
-
+          <EditModal item={editingItem} onSave={handleSaveEdit} onClose={() => setIsEditModalOpen(false)} />
         }
       </C.Body>
     </C.Container>

@@ -1,26 +1,17 @@
 import styled from "styled-components";
 
 export const TableLine = styled.tr`
-
+    border-bottom: 1px solid #ccc;
+    align-items: center;
+    padding: 10px 0;
+    &:hover {
+        background-color: #f5f5f5;
+    }
 `
 
 export const TableColumn = styled.td`
-    padding: 10px 0;
-`
-
-export const Cleaner = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-
-    button {
-        background-color: transparent;
-        border: none;
-        color: #FF0000;
-        font-size: 20px;
-        cursor: pointer;
-    }
+    padding: 10px 50px;
+    text-align: center
 `
 
 export const Category = styled.div`
@@ -38,4 +29,16 @@ export const Value = styled.div`
 `
 
 export const Buttons = styled.div`
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 20px;
+        margin: 0 5px;
+    }
 `

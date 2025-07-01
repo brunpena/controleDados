@@ -1,7 +1,7 @@
 import * as C from './index.styles.js'
 import { categories } from '../../data/categories.js'
 import { useState, useEffect } from "react"
-import { formatDateToInput } from '../../helpers/formatters.js'
+import { formatDateToInput } from '../../helpers/helders.js'
 
 export const EditModal = ({ onClose, item, onSave }) => {
     const [formData, setFormData] = useState({
@@ -56,14 +56,14 @@ export const EditModal = ({ onClose, item, onSave }) => {
                         onChange={handleChange} 
                         placeholder="Valor" 
                     />
-                    <label>Categoria:</label>
+                    <label>Data:</label>
                     <C.Input 
                         type="date" 
                         name="date" 
                         value={formData.date} 
                         onChange={handleChange} 
                     />
-                    <label>Data:</label>
+                    <label>Categoria:</label>
                     <C.Select name="category" value={formData.category} onChange={handleChange}>
                         <>
                             <option></option>

@@ -22,16 +22,16 @@ export const TableItem = ({ item, onDelete, onEdit }) => {
             <C.TableColumn>{palavraMaiuscula(item.title)}</C.TableColumn>
             <C.TableColumn>
                 <C.Value color={categories[item.category].expense}>
-                    R$ {item.value.toFixed(2)}
+                    R$ {Number(item.value).toFixed(2)}
                 </C.Value>
             </C.TableColumn>
             <C.TableColumn>
                 <C.Buttons>
                     <button onClick={() => onDelete(item)}>
-                        	❌
+                        ❌
                     </button>
                     <button onClick={() => onEdit(item)}>
-                        oi
+                        ✏️
                     </button>
                     
                 </C.Buttons>
