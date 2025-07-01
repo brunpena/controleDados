@@ -1,7 +1,7 @@
 import * as C from './index.styles.js'
 import { TableItem } from '../TableItem/index.jsx'
 
-export const TableArea = ({ list }) => {
+export const TableArea = ({ list, onDelete, onEdit }) => {
     return (
         <C.Table>
             <thead>
@@ -14,7 +14,7 @@ export const TableArea = ({ list }) => {
             </thead>
             <tbody>
                 {list.map((item, index)=> (
-                    <TableItem key={index} item={item} />
+                    <TableItem key={index} item={item} onDelete={onDelete} onEdit={onEdit} />
                 ))}
             </tbody>
         </C.Table>

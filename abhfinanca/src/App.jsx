@@ -7,6 +7,7 @@ import { TableArea } from './components/TableArea/index.jsx'
 import { InfoArea } from './components/InfoArea/index.jsx'
 import { InputArea } from './components/InputArea/index.jsx'
 import { AreaIA } from './components/AreaIA/index.jsx'
+import { EditModal } from './components/EditModal/index.jsx'
 
 const App = () => {
   const [list, setList] = useState(itens)
@@ -14,6 +15,9 @@ const App = () => {
   const [filteredList, setFilteredList] = useState([])
   const [income, setIncome] = useState(0) // Estado para armazenar a renda total
   const [expense, setExpense] = useState(0) // Estado para armazenar a despesa total
+
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false) 
+  const [editingItem, setEditingItem] = useState(null) 
 
   useEffect(() => {
     setFilteredList(filterListByMonth(list, currentMonth))
@@ -45,6 +49,26 @@ const App = () => {
     setList(newList) // Atualiza a lista com o novo item
   }
 
+  const handleDeleteItem = (itemToDelete) => {
+    const newList = list.filter(item => item.id !== itemToDelete.id);
+    setList(newList);
+    saveData(newList);
+  }
+
+  const handleEditClick = (item) => {
+    setEditingItem(item);
+    setIsEditModalOpen(true);
+  }
+
+  const handleSaveEdit = (editedItem) => {
+    const newList = list.map(item => {
+      item.id === editedItem.id ? editedItem : item
+    })
+    setList(newList)
+    saveData(newList)
+    setIsEditModalOpen(false)
+  }
+
   return (
     <C.Container>
       <C.Header>
@@ -54,8 +78,15 @@ const App = () => {
         <InfoArea currentMonth={currentMonth} onMonthChange={handleMonthChange} income={income} expense={expense}/>
         <InputArea onAdd={handleAddItem} />
         <AreaIA item={filteredList} />
-        <TableArea list={filteredList}/>
-        
+        <TableArea list={filteredList} onDelete={handleDeleteItem} onEdit={handleEditClick}/>
+        {isEditModalOpen && 
+          <EditModal 
+            item={editingItem} 
+            onSave={handleSaveEdit} 
+            onClose={() => setIsEditModalOpen(false)} 
+          />
+
+        }
       </C.Body>
     </C.Container>
   )

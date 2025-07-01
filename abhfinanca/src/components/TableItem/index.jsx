@@ -2,7 +2,7 @@ import * as C from './index.styles'
 import { formatDate } from '../../helpers/helders'
 import { categories } from '../../data/categories'
 
-export const TableItem = ({ item }) => {
+export const TableItem = ({ item, onDelete, onEdit }) => {
 
     const palavraMaiuscula = (str) => {
          if (typeof str !== 'string' || str.length === 0) {
@@ -24,6 +24,17 @@ export const TableItem = ({ item }) => {
                 <C.Value color={categories[item.category].expense}>
                     R$ {item.value.toFixed(2)}
                 </C.Value>
+            </C.TableColumn>
+            <C.TableColumn>
+                <C.Buttons>
+                    <button onClick={() => onDelete(item)}>
+                        	❌
+                    </button>
+                    <button onClick={() => onEdit(item)}>
+                        oi
+                    </button>
+                    
+                </C.Buttons>
             </C.TableColumn>
         </C.TableLine>
     )
