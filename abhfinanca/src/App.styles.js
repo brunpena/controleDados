@@ -4,16 +4,13 @@ export const Container = styled.div`
 `
 export const Header = styled.div`
     background-color: #0d47a1;
-    height: 150px;
+    height: 170px;
     text-align: center;
     width: 100%;
-`
-
-export const HeaderText = styled.h1`
-    margin: 0;
-    padding: 0;
-    padding-top: 30px;
-    color: #fff;
+=`
+export const HeaderImage = styled.img`
+    width: 200px;
+    height: 150px;
 `
 
 export const Body = styled.div`

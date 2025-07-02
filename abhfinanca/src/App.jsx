@@ -50,6 +50,7 @@ const App = () => {
   }
 
   const handleDeleteItem = (itemToDelete) => {
+    console.log('Item a ser deletado:', itemToDelete);
     const newList = list.filter(item => item.id !== itemToDelete.id);
     setList(newList);
     saveData(newList);
@@ -72,7 +73,7 @@ const App = () => {
   return (
     <C.Container>
       <C.Header>
-        <C.HeaderText>ABH - Finanças</C.HeaderText>
+        <C.HeaderImage src="/logobranco.png" alt="Logo ABH - Finanças" />
       </C.Header>
       <C.Body>
         <InfoArea currentMonth={currentMonth} onMonthChange={handleMonthChange} income={income} expense={expense}/>

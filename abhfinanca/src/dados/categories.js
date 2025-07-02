@@ -40,5 +40,35 @@ export const categories = {
         color: '#A78BFA',
         icon: 'more_horiz',
         expense: 'red'
+    },
+    education: {
+        title: 'Educação',
+        color: '#7C3AED', 
+        icon: 'school',
+        expense: 'red'
+    },
+    utilities: {
+        title: 'Contas',
+        color: '#EF4444', 
+        icon: 'receipt',
+        expense: 'red'
+    },
+    investments: {
+        title: 'Investimentos',
+        color: '#14B8A6', 
+        icon: 'trending_up',
+        expense: 'green'
+    },
+    shopping: {
+        title: 'Compras',
+        color: '#EC4899', 
+        icon: 'shopping_bag',
+        expense: 'red'
+    },
+    gifts: {
+        title: 'Presentes',
+        color: '#F59E0B', 
+        icon: 'card_giftcard',
+        expense: 'red'
     }
 }

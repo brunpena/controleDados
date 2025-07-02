@@ -36,8 +36,10 @@ export const EditModal = ({ onClose, item, onSave }) => {
         <C.Modal>
             <C.ModalContent>
                 <C.ModalHeader>
+                    <span>
                     <h2>Editar Item</h2>
                     <button onClick={onClose}>❌</button>
+                    </span>
                 </C.ModalHeader>
                 <C.ModalBody>
                     <label>Título:</label>

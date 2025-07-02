@@ -14,21 +14,25 @@ export const Modal = styled.div`
 
 export const ModalContent = styled.div`
   background-color: #fff;
-  padding: 20px;
+  padding: 15px;
   border-radius: 8px;
   min-width: 300px;
 `;
 
 export const ModalHeader = styled.div`
-  margin-bottom: 10px;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
+  & span {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   & button {
     background-color: transparent;
     border: none;
     font-size: 20px;
     cursor: pointer;
-    left: 0;
+    right: 0;
   }
 `;
 
@@ -42,6 +46,8 @@ export const Input = styled.input`
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
 `;
 
 export const Select = styled.select`
@@ -53,6 +59,18 @@ export const Select = styled.select`
 export const ModalFooter = styled.div`
   margin-top: 15px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 10px;
+  & button {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    justify-content: center;
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
 `;
