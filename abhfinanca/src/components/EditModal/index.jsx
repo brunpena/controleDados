@@ -1,7 +1,7 @@
 import * as C from './index.styles.js'
-import { categories } from '../../data/categories.js'
+import { categories } from '../../dados/categories.js'
 import { useState, useEffect } from "react"
-import { formatDateToInput } from '../../helpers/helders.js'
+import { formatDateToInput } from '../../funcoes/funcoes.js'
 
 export const EditModal = ({ onClose, item, onSave }) => {
     const [formData, setFormData] = useState({

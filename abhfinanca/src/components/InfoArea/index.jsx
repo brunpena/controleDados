@@ -1,5 +1,5 @@
 import * as C from './index.styles'
-import { formatCurrentMonth } from '../../helpers/helders'
+import { formatCurrentMonth } from '../../funcoes/funcoes'
 import { ResumeItem } from '../ResumeItem/index'
 
 export const InfoArea = ({ currentMonth, onMonthChange, income, expense }) => {

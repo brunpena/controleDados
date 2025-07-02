@@ -1,6 +1,6 @@
 import * as C from './index.styles'
-import { formatDate } from '../../helpers/helders'
-import { categories } from '../../data/categories'
+import { formatDate } from '../../funcoes/funcoes'
+import { categories } from '../../dados/categories'
 
 export const TableItem = ({ item, onDelete, onEdit }) => {
 
