@@ -10,11 +10,12 @@ export const Header = styled.div`
 =`
 export const HeaderImage = styled.img`
     width: 200px;
-    height: 150px;
+    height: 155px;
 `
 
 export const Body = styled.div`
     margin: auto;
     max-width: 980px;
+    min-width: 520px;
     margin-bottom: 50px;
 `
