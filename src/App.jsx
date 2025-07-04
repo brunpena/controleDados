@@ -10,7 +10,10 @@ import { AreaIA } from './components/AreaIA/index.jsx'
 import { EditModal } from './components/EditModal/index.jsx'
 
 const App = () => {
-  const [list, setList] = useState(itens)
+  const [list, setList] = useState(() => {
+    const saved = localStorage.getItem('dados')
+    return saved ? JSON.parse(saved) : itens
+  })
   const [currentMonth, setCurrentMonth] = useState(getCurrentMonth())
   const [filteredList, setFilteredList] = useState([])
   const [income, setIncome] = useState(0) // Estado para armazenar a renda total
@@ -44,14 +47,24 @@ const App = () => {
   }
 
   const handleAddItem = (item) => {
-    let newList = [...list]
-    newList.push(item)
-    setList(newList) // Atualiza a lista com o novo item
+    const newItem = {
+      ...item,
+      id: Date.now() + Math.floor(Math.random() * 1000)
+    }
+    const saved = localStorage.getItem('dados')
+    const currentList = saved ? JSON.parse(saved) : []
+    const newList = [...currentList, newItem]
+    saveData(newList)
+    setList(newList)
+    console.log('Item adicionado:', newItem)
   }
+
+
 
   const handleDeleteItem = (itemToDelete) => {
     console.log('Item a ser deletado:', itemToDelete);
     const newList = list.filter(item => item.id !== itemToDelete.id);
+    console.log(newList)
     setList(newList);
     saveData(newList);
   }
@@ -78,6 +91,7 @@ const App = () => {
       <C.Body>
         <InfoArea currentMonth={currentMonth} onMonthChange={handleMonthChange} income={income} expense={expense}/>
         <InputArea onAdd={handleAddItem} />
+        {console.log(` itens ${itens}`)}
         <AreaIA item={filteredList} />
         <TableArea list={filteredList} onDelete={handleDeleteItem} onEdit={handleEditClick}/>
         {isEditModalOpen && 

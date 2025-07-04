@@ -5,9 +5,9 @@ import { categories } from '../../dados/categories'
 export const TableItem = ({ item, onDelete, onEdit }) => {
 
     const palavraMaiuscula = (str) => {
-         if (typeof str !== 'string' || str.length === 0) {
+        if (typeof str !== 'string' || str.length === 0) {
             return str;
-         }
+        }
         return str.charAt(0).toUpperCase() + str.slice(1)
     }
 

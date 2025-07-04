@@ -1,3 +1,5 @@
+import {itens} from '../dados/itens' 
+
 export const getCurrentMonth = () => {
     let now = new Date();
     return `${now.getFullYear()}-${(now.getMonth() + 1)}`;
@@ -96,9 +98,11 @@ export const newDateAdjusted = (date) => {
     return new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
 }
 
-export const saveData = () => {
-    
+export const saveData = (list) => {
+  localStorage.setItem('dados', JSON.stringify(list))
+  console.log('Lista salva:', list)
 }
+
 
 export const formatDateToInput = (date) => {
     if (!date) return ''
